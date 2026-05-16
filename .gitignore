@@ -1,0 +1,3 @@
+# Reference clone excluded from glucose_manager_web
+gms/docs/ref_project/
+.git.empecs_parent_push_bak/
