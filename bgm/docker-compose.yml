@@ -1,0 +1,9 @@
+# BGM MongoDB — 127.0.0.1:63302
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:63302:27017"
+    volumes:
+      - ./data/mongo:/data/db

@@ -1,0 +1,20 @@
+[Unit]
+Description=BGM Backend API (Express + MongoDB)
+Wants=docker.service network-online.target
+After=docker.service network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/lunar/empecs/bgm/be
+ExecStart=/usr/bin/node src/index.js
+Restart=always
+RestartSec=5
+# PORT 63301, MONGODB_URI mongodb://127.0.0.1:63302/bgm, JWT_SECRET
+EnvironmentFile=/lunar/empecs/bgm/be/.env
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=bgm-be
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,6 @@
+{
+  "appId": "kr.co.lunarsystem.bgm",
+  "appName": "혈당노트",
+  "webDir": "dist",
+  "server": { "androidScheme": "https" }
+}

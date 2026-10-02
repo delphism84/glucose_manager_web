@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+
+  --color-navy: #16264c;
+  --color-navy-deep: #0e1a38;
+  --color-navy-soft: #eef1f8;
+  --color-brand: #e5343f;
+  --color-brand-dark: #c9252f;
+  --color-rose: #ff6b8b;
+  --color-blush: #fff0f3;
+  --color-ink: #1a2238;
+  --color-sub: #6b7489;
+  --color-mute: #a3aabb;
+  --color-line: #eceef3;
+  --color-canvas: #f6f7fa;
+
+  --shadow-card: 0 1px 2px rgb(22 38 76 / 0.04), 0 8px 24px rgb(22 38 76 / 0.06);
+  --shadow-fab: 0 10px 24px rgb(229 52 63 / 0.38);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--color-ink);
+  background: #e9ecf2;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  font-feature-settings: "tnum";
+}
+
+button {
+  cursor: pointer;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+.anim-sheet {
+  animation: sheet-up 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.anim-fade {
+  animation: fade-in 0.18s ease-out;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    inset: 0;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+}
